@@ -6,6 +6,8 @@ from schemas.ruleSchemas import ruleSerializer
 from schemas.evaluateRequest import EvaluateRequest
 from bson import ObjectId
 from rule_enginee.engine import RuleEnginee
+from dotenv import load_dotenv
+load_dotenv()
 app = FastAPI()
 
 app.add_middleware(
@@ -17,9 +19,8 @@ app.add_middleware(
 )
 
 
-@app.get("/")
-async def index():
-    return {"message": "ZeoTab Rule enginee Application backend"}
+
+
 
 
 #create an api to store the rules
